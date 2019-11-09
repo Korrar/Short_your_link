@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+</nav>
+<div class="card" style="position:relative; left:40%;width: 32rem;">
+  <div class="card-body">
+    <h5 class="card-title">Short your url</h5>
+    <p class="card-text">
+        <form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+
+
+
+<p>{{ shorted }}</p>
+
+    {% if shorted %}
+        <a href="{{ shorted }}">Visit Your shorted link</a>
+    {% else %}
+        Submit Your URL !
+    {% endif %}
+        </p>
+    <button type="submit" class="btn btn-dark">submit</button>
+      </form>
+  </div>
+
+</div>
+
+</div>
+
+
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+</nav>
+
+
+</body>
+</html>
