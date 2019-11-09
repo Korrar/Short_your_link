@@ -18,7 +18,7 @@ from django.urls import path
 from url.views import home_view, redirecting_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/here', admin.site.urls),
     path('', home_view),
     path('<str:string>/',redirecting_view),
 ]
