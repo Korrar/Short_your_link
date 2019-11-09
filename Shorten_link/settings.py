@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
-import django_heroku
+import os , django_heroku , json
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3f7(h09jj-=q599t!%_s_8z=o1eq9!2*o6a!7lr#-@g=#2)v$1'
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
+SECRET_KEY = config['SECRET']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
