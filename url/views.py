@@ -30,7 +30,7 @@ def short_link():
             return st
 
 
-def home_view(request ):
+def home_view(request):
     print(request.user)
     form = UrlForm(request.POST or None)
     if form.is_valid():
@@ -49,7 +49,7 @@ def home_view(request ):
     return render(request, 'home.html', context)
 
 
-def redirecting_view(request, string):
+def redirecting_view(request, string ):
     try:
         obj = Links.objects.get(url_shorted_link ='{}{}'.format(my_domian,string))
         return redirect('{}'.format(obj.url_link))
