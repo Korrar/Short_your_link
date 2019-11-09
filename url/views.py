@@ -6,7 +6,7 @@ from django.core import exceptions
 import random
 import string
 
-my_domian = 'http://127.0.0.1:8000/'
+my_domian = 'https://short-your-url-5.herokuapp.com/'
 
 
 def randomString(stringLength=5):
@@ -54,7 +54,7 @@ def redirecting_view(request, string):
         obj = Links.objects.get(url_shorted_link ='{}{}'.format(my_domian,string))
         return redirect('{}'.format(obj.url_link))
     except exceptions.ObjectDoesNotExist:
-        redirect('http://127.0.0.1:8000/')
+        redirect('')
 
 
 
